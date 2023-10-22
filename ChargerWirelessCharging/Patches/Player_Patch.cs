@@ -65,7 +65,7 @@ namespace ChargerWirelessCharging.Patches
                 if (keyValuePairs.Current.Value != null)
                 {
                     InventoryItem inventoryItem = keyValuePairs.Current.Value;
-                    if (inventoryItem.item.GetTechType() == WirelessChargingChipPrefab.Info.TechType)
+                    if (inventoryItem.item.GetTechType() == WirelessChargingChip.Info.TechType)
                     {
                         playerHasChipEquipted = true;
                     }
@@ -75,7 +75,7 @@ namespace ChargerWirelessCharging.Patches
             //The easy way does not work with the MoreChipSlots Mod so yeah i need to find a workaround
             //if (CargerWirelessCharging.Config.Config_chargeLooseBatteryWithoutChip | Inventory.main.equipment.GetTechTypeInSlot("Chip") == CargerWirelessCharging.WirelessChargerChipTechType)
             //and here is the Workaround ..... ..... .... yeah .... well....
-            if (Plugin.Config.Config_chargeLooseBatteryWithoutChip || playerHasChipEquipted)
+            if (Plugin.ICMConfig.Config_chargeLooseBatteryWithoutChip || playerHasChipEquipted)
             {
                 foreach (Battery b_l in batterieslowprio)
                 {

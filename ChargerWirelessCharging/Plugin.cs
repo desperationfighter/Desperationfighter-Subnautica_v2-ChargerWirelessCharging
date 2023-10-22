@@ -16,7 +16,7 @@ namespace ChargerWirelessCharging
 
         private static Assembly Assembly { get; } = Assembly.GetExecutingAssembly();
 
-        internal static IngameConfigMenu Config { get; private set; }
+        internal static IngameConfigMenu ICMConfig { get; private set; }
 
         private void Awake()
         {
@@ -24,7 +24,7 @@ namespace ChargerWirelessCharging
             Logger = base.Logger;
 
             //Load Config and Ingame Menu
-            Config = OptionsPanelHandler.RegisterModOptions<IngameConfigMenu>();
+            ICMConfig = OptionsPanelHandler.RegisterModOptions<IngameConfigMenu>();
 
             // Initialize custom prefabs
             InitializePrefabs();
@@ -36,7 +36,7 @@ namespace ChargerWirelessCharging
 
         private void InitializePrefabs()
         {
-            WirelessChargingChipPrefab.Register();
+            WirelessChargingChip.Register();
         }
     }
 }

@@ -52,9 +52,9 @@ namespace ChargerWirelessCharging.Mono
 
         public void Update()
         {
-            if (!Plugin.Config.Config_modEnable) return;
+            if (!Plugin.ICMConfig.Config_modEnable) return;
             if (!basefound) return;
-            if (interrimdistance > Plugin.Config.Config_maxPlayerDistanceToCharger) return;
+            if (interrimdistance > Plugin.ICMConfig.Config_maxPlayerDistanceToCharger) return;
             if (Time.deltaTime == 0f) return;
 
             if (wirelesschargertimer > 0f)
@@ -80,7 +80,7 @@ namespace ChargerWirelessCharging.Mono
                         float capacity = battery.capacity;
                         if (charge < capacity)
                         {
-                            float num3 = DayNightCycle.main.deltaTime * (charger.chargeSpeed / 100 * Plugin.Config.Config_WirelessChargeSpeed) * capacity;
+                            float num3 = DayNightCycle.main.deltaTime * (charger.chargeSpeed / 100 * Plugin.ICMConfig.Config_WirelessChargeSpeed) * capacity;
                             if (charge + num3 > capacity)
                             {
                                 num3 = capacity - charge;

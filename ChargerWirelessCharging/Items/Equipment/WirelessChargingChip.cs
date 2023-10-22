@@ -10,7 +10,7 @@ using System.Collections;
 
 namespace ChargerWirelessCharging.Items.Equipment
 {
-    public static class WirelessChargingChipPrefab
+    public static class WirelessChargingChip
     {
         public static PrefabInfo Info { get; } = PrefabInfo
             .WithTechType("WirelesschargingChip",
